@@ -1,0 +1,75 @@
+{
+	"name": "dataflow3",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable7",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Parquet7",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          ID as integer,",
+				"          countrycode as string,",
+				"          countryname as string,",
+				"          date as date,",
+				"          c1_flag as boolean,",
+				"          c1_school_closing as double,",
+				"          c2_flag as boolean,",
+				"          c2_workplace_closing as double,",
+				"          c3_cancel_public_events as double,",
+				"          c3_flag as boolean,",
+				"          c4_flag as boolean,",
+				"          c4_restrictions_on_gatherings as double,",
+				"          c5_close_public_transport as double,",
+				"          c5_flag as boolean,",
+				"          c6_flag as boolean,",
+				"          c6_stay_at_home_requirements as double,",
+				"          c7_flag as boolean,",
+				"          c7_restrictions_on_internal_movement as double,",
+				"          c8_international_travel_controls as double,",
+				"          e1_flag as boolean,",
+				"          e1_income_support as double,",
+				"          e2_debt_contract_relief as double,",
+				"          e3_fiscal_measures as double,",
+				"          e4_international_support as double,",
+				"          h1_flag as boolean,",
+				"          h1_public_information_campaigns as double,",
+				"          h2_testing_policy as double,",
+				"          h3_contact_tracing as double,",
+				"          h4_emergency_investment_in_healthcare as double,",
+				"          h5_investment_in_vaccines as double,",
+				"          stringencyindex as double,",
+				"          stringencyindexfordisplay as double",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "team24datafactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c7e0eb2b-8f4a-468a-86c6-a72aeb5532ea",
+		"tenantId": "d57d32cc-c121-488f-b07b-dfe705680c71"
+	}
+}

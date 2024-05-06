@@ -1,0 +1,85 @@
+{
+	"name": "AzureSqlTable8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "updated",
+				"type": "date"
+			},
+			{
+				"name": "confirmed",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "confirmed_change",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "deaths",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "deaths_change",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "recovered",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "recovered_change",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "latitude",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "longitude",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "iso2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "iso3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "country_region",
+				"type": "nvarchar"
+			},
+			{
+				"name": "load_time",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Union_Table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
